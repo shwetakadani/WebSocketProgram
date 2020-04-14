@@ -16,7 +16,7 @@ public class ChatController {
 	@SendTo("/topic/public")
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
 		return chatMessage;
-	}
+	}//end of method
 
 	@MessageMapping("/chat.addUser") // a message with destination /app/chat.addUser will be routed to the addUser()
 	@SendTo("/topic/public")
@@ -25,5 +25,6 @@ public class ChatController {
 		headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
 		return chatMessage;
 	}
+//end of method
 
 }
